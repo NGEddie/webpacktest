@@ -1,38 +1,44 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
   mode: 'production',
   entry: {
-    main: './src/app.js',
+    main: './src/app.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist', 'js'),
-    filename: 'login.js',
+    filename: 'changepassword.js'
   },
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      },
+      {
         test: /\.(scss)$/,
         use: [
           {
-            loader: 'style-loader',
+            loader: 'style-loader'
           },
           {
-            loader: 'css-loader',
+            loader: 'css-loader'
           },
           {
             loader: 'postcss-loader',
             options: {
               plugins: function() {
                 return [require('autoprefixer')];
-              },
-            },
+              }
+            }
           },
           {
-            loader: 'sass-loader',
-          },
-        ],
+            loader: 'sass-loader'
+          }
+        ]
       },
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
@@ -41,11 +47,13 @@ module.exports = {
             loader: 'file-loader',
             options: {
               limit: 8000,
-              name: 'img/[name].[ext]',
-            },
-          },
-        ],
-      },
-    ],
-  },
+              name: '[name].[ext]',
+              outputPath: '../img',
+              publicPath: './img'
+            }
+          }
+        ]
+      }
+    ]
+  }
 };

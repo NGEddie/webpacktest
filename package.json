@@ -4,12 +4,15 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "build": "webpack --development --watch"
+    "build": "webpack --development --watch",
+    "buildProd": "webpack"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.4.0",
     "autoprefixer": "^9.5.0",
+    "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
     "node-sass": "^4.11.0",

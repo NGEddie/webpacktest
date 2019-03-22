@@ -2,8 +2,12 @@
 @import '../../node_modules/bootstrap/scss/variables.scss';
 @import '../../node_modules/bootstrap/scss/mixins.scss';
 @import '../../node_modules/bootstrap/scss/root';
-@import '../../node_modules/bootstrap/scss/utilities/background.scss';
-@import '../../node_modules/bootstrap/scss/utilities/flex.scss';
-@import '../../node_modules/bootstrap/scss/utilities/display.scss';
 @import '../../node_modules/bootstrap/scss/grid';
-@import './login/login.sass';
+@import '../../node_modules/bootstrap/scss/forms';
+@import '../../node_modules/bootstrap/scss/buttons';
+@import '../../node_modules/bootstrap/scss/input-group';
+@import '../../node_modules/bootstrap/scss/type';
+@import '../../node_modules/bootstrap/scss/utilities';
+@import '../../node_modules/bootstrap/scss/tooltip';
+@import '../../node_modules/bootstrap/scss/alert';
+@import './changepassword/changepassword.sass';
