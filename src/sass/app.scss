@@ -2,5 +2,8 @@
 @import '../../node_modules/bootstrap/scss/variables.scss';
 @import '../../node_modules/bootstrap/scss/mixins.scss';
 @import '../../node_modules/bootstrap/scss/root';
-@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../../node_modules/bootstrap/scss/utilities/background.scss';
+@import '../../node_modules/bootstrap/scss/utilities/flex.scss';
+@import '../../node_modules/bootstrap/scss/utilities/display.scss';
+@import '../../node_modules/bootstrap/scss/grid';
 @import './login/login.sass';
