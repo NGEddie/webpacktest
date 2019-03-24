@@ -7,7 +7,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist', 'js'),
-    filename: 'changepassword.js'
+    filename: 'authForm.js'
   },
   module: {
     rules: [
