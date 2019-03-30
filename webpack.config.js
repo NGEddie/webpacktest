@@ -1,44 +1,26 @@
 const path = require('path');
+const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'production',
   entry: {
-    main: './src/app.js'
+    index: './src/index.js',
+    dashboard: './src/dashboard.js',
   },
   output: {
-    path: path.resolve(__dirname, 'dist', 'js'),
-    filename: 'authForm.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'js/[name].js',
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
-      },
-      {
-        test: /\.(scss)$/,
+        test: /\.s?[ac]ss$/,
         use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader'
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: function() {
-                return [require('autoprefixer')];
-              }
-            }
-          },
-          {
-            loader: 'sass-loader'
-          }
-        ]
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' },
+        ],
       },
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
@@ -48,12 +30,17 @@ module.exports = {
             options: {
               limit: 8000,
               name: '[name].[ext]',
-              outputPath: '../img',
-              publicPath: './img'
-            }
-          }
-        ]
-      }
-    ]
-  }
+              outputPath: './img',
+              publicPath: '../img',
+            },
+          },
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: './css/[name].css',
+    }),
+  ],
 };

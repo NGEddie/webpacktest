@@ -1,0 +1,22 @@
+$ptp-primary: #4e9525;
+$ptp-primary-light: #edf0c7;
+$ptp-primary-dark: #2e5a1c;
+
+$ptp-secondary: #ff5c00;
+
+$ptp-grey-light-1: #f7f7f7;
+$ptp-grey-light-2: #eee;
+
+$ptp-grey-dark-1: #777;
+$ptp-grey-dark-2: #999;
+$ptp-grey-dark-3: #333;
+
+$theme-colors: (
+  'ptp-primary': $ptp-primary,
+  'ptp-primary-light': $ptp-primary-light,
+  'ptp-primary-dark': $ptp-primary-dark,
+  'ptp-secondary': $ptp-secondary,
+  'ptp-grey-dark-1': $ptp-grey-dark-1,
+  'ptp-grey-dark-2': $ptp-grey-dark-2,
+  'ptp-grey-dark-3': $ptp-grey-dark-3,
+);
