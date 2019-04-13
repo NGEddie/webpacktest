@@ -3,14 +3,13 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: {
-    index: './src/index.js',
-    dashboard: './src/dashboard.js',
+    dashboard: './src/dashboard.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].js',
+    filename: 'js/[name].js'
   },
   module: {
     rules: [
@@ -18,9 +17,9 @@ module.exports = {
         test: /\.s?[ac]ss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          { loader: 'css-loader' },
-          { loader: 'sass-loader' },
-        ],
+          {loader: 'css-loader'},
+          {loader: 'sass-loader'}
+        ]
       },
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
@@ -31,16 +30,16 @@ module.exports = {
               limit: 8000,
               name: '[name].[ext]',
               outputPath: './img',
-              publicPath: '../img',
-            },
-          },
-        ],
-      },
-    ],
+              publicPath: '../img'
+            }
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './css/[name].css',
-    }),
-  ],
+      filename: './css/[name].css'
+    })
+  ]
 };
